@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solar Quest — Host</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">🛰️ Solar Quest — Host</div>
+    <div class="status" id="status">Not connected</div>
+  </div>
+
+  <div class="panel">
+    <div class="joinRow">
+      <button id="createBtn" class="accent">Create Room</button>
+      <input id="code" placeholder="ROOM CODE" />
+      <button id="joinBtn">Join as Host</button>
+      <button id="restartBtn" class="accent">Restart Room</button>
+      <div class="roomCodeBox">Room: <span id="roomCode">—</span></div>
+    </div>
+    <div class="hint">
+      Share this with players: open <b>/</b> (player). Keep this open: <b>/host.html</b>
+    </div>
+  </div>
+
+  <div class="hostLayout">
+    <div class="hostMain">
+      <canvas id="map" width="980" height="520"></canvas>
+      <div class="smallHint">Full-map overview (all players)</div>
+    </div>
+
+    <div class="hostSide">
+      <div class="sideTitle">Player Views</div>
+      <div id="miniGrid" class="miniGrid"></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="host.js"></script>
+</body>
+</html>
